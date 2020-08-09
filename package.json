@@ -22,6 +22,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "react-router-dom": "^5.2.0"
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "serialize-javascript": "^4.0.0"
   }
 }
