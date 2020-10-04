@@ -1,21 +1,23 @@
 import React from 'react';
-import ReactDomServer from 'react-dom/server';
+import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
-import {Helmet} from 'react-helmet';
-import Template from './template';
-import moduleName from 'module';
-import App from './App/App';
+import {Helmet} from "react-helmet";
+import Template from './app/template';
+import App from './app/App';
 
-export default function serverRender(){
-    return (req,res) => {
-        const context ={};
-        const markup = ReactDomServer.renderToString(
+export default function serverRenderer({clientStats, serverStats}) {
+    return (req, res, next) => {
+        const context = {};
+        const markup = ReactDOMServer.renderToString(
             <StaticRouter location={req.url} context={context}>
                 <App/>
             </StaticRouter>
-        )
-
+        );
         const helmet = Helmet.renderStatic();
-        res.status(200).send(Template({markup: markup,helmet: helme}))
-    }
+
+        res.status(200).send(Template({
+            markup: markup,
+            helmet: helmet,
+        }));
+    };
 }
