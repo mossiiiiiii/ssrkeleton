@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import {Helmet} from "react-helmet";
-import Template from './app/template';
-import App from './app/App';
+import Template from './App/template';
+import App from './App/App';
+
 
 export default function serverRenderer({clientStats, serverStats}) {
     return (req, res, next) => {
