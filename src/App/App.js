@@ -4,7 +4,7 @@ import React, {Component} from 'react';
     render() {
         return (
             <div>                
-                <h1>Hello World mohsen!</h1>
+                <h1>Hello majid!</h1>
             </div>
         );
     }
