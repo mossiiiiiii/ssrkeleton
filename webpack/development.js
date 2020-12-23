@@ -12,7 +12,7 @@ const client = {
     entry: ['webpack-hot-middleware/client?name=client&reload=true', `${srcDir}/client.js`],
     output: {
         filename: 'client.js',
-        publicPath: distDir,
+        publicPath: '/dist/',
     },
     devtool: 'source-map',
     module: {
@@ -75,7 +75,7 @@ const server =     {
     output: {
         filename: 'server.js',
         libraryTarget: 'commonjs2',
-        publicPath: path.resolve(process.cwd(), '.' + '/dist'),
+        publicPath: '/dist/',
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -103,7 +103,7 @@ const server =     {
                     }
                 ],
             },
-            
+
         ],
     },
     plugins: [

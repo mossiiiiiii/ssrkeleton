@@ -38,7 +38,7 @@ function Contact(){
  class App extends Component {
     render() {
         return (
-            <div>                
+            <div>
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path='/contact' component={Contact} />
