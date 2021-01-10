@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "React ssr boilerplate solution",
   "scripts": {
-    "dev": "node ./express/development.js",
-    "build": "webpack -p --config ./webpack/production.js --progress --profile --colors",
+    "dev": "node generator/server/development.js",
+    "build": "webpack -p --config ../ssrkeleton/generator/webpack/production.js --progress --profile --colors",
+    "prod": "node generator/server/production.js ",
     "test": "jest"
   },
   "author": "mohsen haghighatkhah",

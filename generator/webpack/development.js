@@ -1,15 +1,14 @@
+process.env.NODE_ENV = 'development';
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack')
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const srcDir = path.join(__dirname, './../src');
-const distDir = path.join(__dirname, './../dist');
 
 const client = {
     name: 'client',
     mode:'development',
     target: 'web',
-    entry: ['webpack-hot-middleware/client?name=client&reload=true', `${srcDir}/client.js`],
+    entry: ['webpack-hot-middleware/client?name=client&reload=true', `./src/render/client.js`],
     output: {
         filename: 'client.js',
         publicPath: '/dist/',
@@ -71,7 +70,7 @@ const server =     {
     name: 'server',
     mode:'development',
     target: 'node',
-    entry: ['webpack-hot-middleware/client?name=server&reload=true', `${srcDir}/server.js`],
+    entry: ['webpack-hot-middleware/client?name=server&reload=true', `./src/render/server.js`],
     output: {
         filename: 'server.js',
         libraryTarget: 'commonjs2',

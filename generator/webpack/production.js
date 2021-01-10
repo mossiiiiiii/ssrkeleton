@@ -1,11 +1,12 @@
+process.env.NODE_ENV = 'production';
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StatsPlugin = require('stats-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
-const distDir = path.resolve(process.cwd(), './dist');
-const srcDir = path.resolve(process.cwd(), './src');
+const distDir = path.resolve(process.cwd(), '.' + '/dist');
+const srcDir = path.resolve(process.cwd(), './src/render');
 
 const client = {
         name: 'client',
